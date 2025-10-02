@@ -18,7 +18,7 @@ GEN_TOC=toc
 GEN_DBG_CMDS=debug_cmds
 
 CHAPTERS= \
-	../README \
+	intro \
 	main_concepts \
 	../tutorial/README \
 	script_syntax \

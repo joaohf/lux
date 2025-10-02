@@ -23,7 +23,6 @@ core*
 # Doc
 *.d
 *.tmp
-/README.md
 /doc/cmd_line_opts.md
 /doc/config_params.md
 /doc/debug_cmds.md
@@ -34,6 +33,9 @@ core*
 /doc/references.md
 /doc/script_syntax.md
 /doc/toc.md
+/doc/hardening.md
+/doc/intro.md
+/doc/warnings.md
 /tutorial/README.md
 
 

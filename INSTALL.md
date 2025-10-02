@@ -34,11 +34,15 @@ The following software is required:
   runtime system must be installed in order to build the tool. Install
   `Erlang/OTP` from [source][Erlang/OTP] or use [pre-built packages][]:
 
->     brew install erlang
+  ```bash
+  brew install erlang
+  ```
 
-* or
+  or:
 
->     sudo apt-get install erlang erlang-dev
+  ```bash
+  sudo apt-get install erlang erlang-dev
+  ```
 
 * By installing the `erlang` package most of the Erlang apps needed by
   Lux will be installed automatically. But on some systems there are

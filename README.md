@@ -33,7 +33,9 @@ Video walkthru of the tutorial
 
 This talk about Lux was presented at the Erlang User Conference 2019:
 
-[Cons T Ahs and Hakan Mattsson - LUX - an expect like test tool | Code BEAM STO 19](https://www.youtube.com/watch?v=Nu15YOpmCKQ)
+[Cons T Ahs and Hakan Mattsson - LUX - an expect like test tool | Code BEAM STO 19][]
+
+[Cons T Ahs and Hakan Mattsson - LUX - an expect like test tool | Code BEAM STO 19]: https://www.youtube.com/watch?v=Nu15YOpmCKQ
 
 A sample script
 ---------------
