@@ -76,7 +76,7 @@ dialyzer: $(DIALYZER_PLT)
 $(DIALYZER_PLT):
 	dialyzer --build_plt --output_plt $(DIALYZER_PLT) \
 		--apps erts kernel stdlib runtime_tools xmerl inets \
-		tools reltool et wx
+		tools reltool et wx || true
 
 dialyzer_clean:
 	rm -f $(DIALYZER_PLT) $(DIALYZER_LOG)

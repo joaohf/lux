@@ -1,0 +1,66 @@
+name: CI
+on:
+#  push:
+#    branches:
+#      - '*'
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            otp-version: 24.3
+          - os: ubuntu-24.04
+            otp-version: 25.3
+          - os: ubuntu-24.04
+            otp-version: 26
+          - os: ubuntu-24.04
+            otp-version: 27
+          - os: ubuntu-24.04
+            otp-version: 28
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: ${{matrix.otp-version}}
+      - name: Configure
+        run: |
+          autoconf
+          ./configure
+      - name: Compile
+        run: make
+      - name: Instal /tmp
+        run: |
+          mkdir -p /tmp/install
+          make DESTDIR=/tmp/install
+      - name: Check
+        run: make xref
+#      - name: Test
+#        run: make test
+
+  dialyzer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: 28
+      - name: Cache Dialyzer PLTs
+        uses: actions/cache@v4
+        with:
+          path: .dialyzer_plt
+          key: ${{ runner.os }}-dialyzer-${{ hashFiles(format('{0}{1}', github.workspace, '/configure.in')) }}
+          restore-keys: |
+            ${{ runner.os }}-dialyzer-
+      - name: Dialyzer
+        run: |
+          autoconf
+          ./configure
+          make dialyzer
+
