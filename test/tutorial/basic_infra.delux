@@ -73,6 +73,16 @@
         [invoke eval_any "make test"]
     [endloop]
 
+[shell make_history]
+    [progress make_history]
+    [timeout 120]
+    -HTML ERROR
+
+    !export PATH="$${LUX_BIN}:$PATH"
+    ?^SH-PROMPT:
+
+    [invoke eval "cd ${tutorial_dir}/chatty/test/infra"]
+
     [invoke eval "make history < /dev/null"]
 
     !cat lux_history.html
