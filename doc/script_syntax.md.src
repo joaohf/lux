@@ -160,7 +160,8 @@ Note that the "exit" command in a Bourne shell may return a non-zero
 status code if the latest executed command returned a non-zero. Use
 "exit 0" if that is an issue.
 
-### Meta statements ###
+Meta statements
+---------------
 
 **\[**  
 Indicates the beginning of a meta statement. Meta statements are ended
@@ -272,7 +273,8 @@ In the logs the iteration counter is represented as a negative line
 number. For example "8:-2:10" would mean line 10 in the second loop
 iteration where the loop starts at line 8.
 
-###Variables###
+Variables
+---------
 
 **\[local Var=Value\]**  
 assigns a value to a variable that is local to the current
@@ -297,7 +299,8 @@ assigns a value to a variable with a very limited scope. Works like
 variable setting is only valid within the macro that assigns the
 variable.
 
-###Multi-line values in variables###
+Multi-line values in variables
+------------------------------
 
     [local Var=Multi\nLine\nValue]
 
@@ -310,7 +313,9 @@ can be written as
         Value
         """]
 
-###Variables in variable names###
+Variables in variable names
+---------------------------
+
 Variable names are also expanded and may themselves contain variables.
 
     [global v=a]
@@ -348,7 +353,8 @@ Here is a small test program demonstrating the usage.
 
 #include <test/assoc_array.lux>
 
-###Built-in variables###
+Built-in variables
+------------------
 
     _BS_        - backspace       (ASCII 8)
     _TAB_       - horizontal tab  (ASCII 9)
@@ -364,7 +370,8 @@ Here is a small test program demonstrating the usage.
     _ASCII_127_ - delete          (ASCII 127)
     N           - where N is an integer refering to a captured substring
 
-###Built-in environment variables###
+Built-in environment variables
+------------------------------
 
     LUX_SHELLNAME       - name of active Lux shell
     LUX_START_REASON    - reason for starting a shell (normal|fail|success)
@@ -373,7 +380,8 @@ Here is a small test program demonstrating the usage.
     LUX_SUCCESS_PATTERN - value of success pattern in the active Lux shell
     PS1                 - shell prompt variable set by Lux
 
-###Miscellaneous statements###
+Miscellaneous statements
+------------------------
 
 **\[doc String\]**  
 **\[docN String\]**  
