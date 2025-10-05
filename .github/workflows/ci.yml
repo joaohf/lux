@@ -14,10 +14,13 @@ jobs:
         include:
           - os: ubuntu-24.04
             otp-version: 26
+            elixir-version: 1.18.4
           - os: ubuntu-24.04
             otp-version: 27
+            elixir-version: 1.18.4
           - os: ubuntu-24.04
             otp-version: 28
+            elixir-version: 1.18.4
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -25,6 +28,11 @@ jobs:
       - uses: erlef/setup-beam@v1
         with:
           otp-version: ${{matrix.otp-version}}
+          elixir-version: ${{matrix.elixir-version}}
+      - name: Install ex_doc
+        run: |
+          mix escript.install --force hex ex_doc
+          ex_doc -v
       - name: Configure
         run: |
           autoconf

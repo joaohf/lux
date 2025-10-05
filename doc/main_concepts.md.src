@@ -1,5 +1,5 @@
 Concepts
---------
+========
 
 A Lux script may succeed or fail, meaning that the system under
 test is either conforming to or diverging from the expected
