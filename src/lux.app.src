@@ -32,7 +32,7 @@
     lux_utils
    ]},
   {registered, []},
-  {applications, [stdlib, kernel]},
+  {applications, [stdlib, kernel, inets, xmerl, runtime_tools]},
   %% Dev apps: reltool debugger wx runtime_tools
   {env, []}
  ]}.

@@ -2,8 +2,7 @@ Introduction
 ============
 
 Lux (LUcid eXpect scripting) is a test automation framework with
-Expect style execution of commands. See [Expect][] for more info about
-the origin.
+Expect style execution of commands. See [Expect][] for more info about the origin.
 
 With Lux it is possible to
 
@@ -15,18 +14,28 @@ With Lux it is possible to
 * interactively debug and trace single test cases
 * get editor support for editing scripts by using the [Emacs][] mode
 
-The tool is written in [Erlang/OTP][] and requires its runtime
-environment.
+The tool is written in [Erlang/OTP][] and
+requires its runtime environment.
 
 See the file **lux.html** for the full documentation or view it online
 on [GitHub](https://github.com/hawk/lux/blob/master/doc/lux.md).
+
+[Expect]:             http://www.nist.gov/el/msid/expect.cfm
+                      "Expect homepage"
+[Erlang/OTP]:         http://www.erlang.org/
+                      "Erlang programming language"
+[Emacs]:              http://www.gnu.org/software/emacs
+[regular expression]: http://www.erlang.org/doc/man/re.html#regexp_syntax
+                      "Erlang style regular expressions (re)"
 
 Video walkthru of the tutorial
 ==============================
 
 This talk about Lux was presented at the Erlang User Conference 2019:
 
-[https://www.youtube.com/watch?v=Nu15YOpmCKQ]
+[Cons T Ahs and Hakan Mattsson - LUX - an expect like test tool | Code BEAM STO 19][]
+
+[Cons T Ahs and Hakan Mattsson - LUX - an expect like test tool | Code BEAM STO 19]: https://www.youtube.com/watch?v=Nu15YOpmCKQ
 
 A sample script
 ---------------

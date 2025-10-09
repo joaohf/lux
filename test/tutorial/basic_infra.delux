@@ -64,16 +64,26 @@
     [timeout 120]
     -HTML ERROR
 
+    !export PATH="$${LUX_BIN}:$PATH"
+    ?^SH-PROMPT:
+
     [invoke eval "cd ${tutorial_dir}/chatty/test/infra"]
     [invoke eval "rm -rf lux_history.* lux_logs"]
     [loop i 1..5]
-        [invoke eval_any "PATH=$${LUX_BIN}:$PATH make test"]
+        [invoke eval_any "make test"]
     [endloop]
 
-    !PATH="$${LUX_BIN}:$PATH" make history < /dev/null
-    !echo ===$$?===
-    ?^===0===
+[shell make_history]
+    [progress make_history]
+    [timeout 120]
+    -HTML ERROR
+
+    !export PATH="$${LUX_BIN}:$PATH"
     ?^SH-PROMPT:
+
+    [invoke eval "cd ${tutorial_dir}/chatty/test/infra"]
+
+    [invoke eval "make history < /dev/null"]
 
     !cat lux_history.html
 

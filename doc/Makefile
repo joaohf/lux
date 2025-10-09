@@ -12,13 +12,14 @@ include ../vsn.mk
 #
 # See http://www.daringfireball.net/projects/markdown
 
+LUX_HTMLDIR=ex_docs_html
 LUX_HTML=../lux.html
 LUX_MD=lux.md
 GEN_TOC=toc
 GEN_DBG_CMDS=debug_cmds
 
 CHAPTERS= \
-	../README \
+	intro \
 	main_concepts \
 	../tutorial/README \
 	script_syntax \
@@ -97,3 +98,6 @@ $(GEN_DBG_CMDS).md.src: ../ebin/lux_debug.beam
 
 %.md.d: %.md.src
 	grep -IE '#include +<.*>' $< | sed -e 's#.*<#../#g' -e 's/>.*//g' > $@
+
+ex_doc:
+	ex_doc -f html --homepage-url "$(INDEX_DIR)/index.html" "Lux" $(LUX_VSN) -o "$(LUX_HTMLDIR)" -c ex_docs.exs -m intro

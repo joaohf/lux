@@ -284,7 +284,7 @@ reltool_opts(LuxAppDir, Opts, ThisEscript, RA, MA) ->
                  {excl_sys_filters,
                   {add,
                    ["^bin/(epmd)(|\\.exe)" ++ [$$],
-                    "^erts.*/bin/(epmd|heart|ct_run)(|\\.exe)"  ++ [$$]]}}];
+                    "^erts.*/bin/(epmd|heart|ct_run|yielding_c_fun)(|\\.exe)"  ++ [$$]]}}];
             InstallProf ->
                 [{profile, InstallProf}]
         end,
